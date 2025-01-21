@@ -1,7 +1,31 @@
-<div id="content">
-  <p>Welcome to my page! Click the buttons below to navigate.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMX Modern Homepage</title>
+  <script src="https://unpkg.com/htmx.org"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><button hx-get="about.html" hx-target="#content" hx-swap="outerHTML">About Me</button></li>
+        <li><button hx-get="projects.html" hx-target="#content" hx-swap="outerHTML">Projects</button></li>
+        <li><button hx-get="index.html #home" hx-target="#content" hx-swap="outerHTML">Home</button></li>
+      </ul>
+    </nav>
+  </header>
 
-<button hx-get="about.html" hx-target="#content">About Me</button>
-<button hx-get="projects.html" hx-target="#content">Projects</button>
-<button hx-get="contact.html" hx-target="#content">Contact</button>
+  <main>
+    <!-- Initial Content -->
+    <div id="content">
+      <section id="home">
+        <h1>Welcome to My Homepage</h1>
+        <p>Click on the navigation buttons to explore!</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
